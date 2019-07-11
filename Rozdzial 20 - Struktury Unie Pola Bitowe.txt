@@ -1,0 +1,57 @@
+I. Struktura vs klasa - różnice:
+W zwykłej klasie składniki klasy przez domniemanie mają dostęp typu private. Struktura to po prostu klasa w której przez domniemanie wszystkie składniki są publiczne.
+
+II. W strukturze czy klasie składniki umieszczane są obok siebie. W unii są zawsze umieszczane w tym samym miejscu ("pojemniku") - czyli tak jakby jedno na drugim.
+
+III. Rozmiar unii wynika:
+b) z wielkości największego składnika
+
+IV. Tak. W dowolnym momencie w unii można włożyć wartość jakiegoś typu danej, który wcześniej został zdefiniowany jako jej składnik. (np. gdy zdefiniowaliśmy unię do przechowywania obiektów char i double, to raz może tam być char, a raz double)
+
+V. Inicjalizacja obiektu jakiejś unii - inicjalizacja jest możliwa, ale musi to być obiekt typu który został zdefiniowany jako pierwszy na liście unii. (Pierwszy składnik)
+
+VI. Składnia wyrażenia odnoszącego się do składnika unii:
+— Unia zwykła (nazwana) — nazwaUnii.nazwaSkladnika
+— Unia anonimowa (nienazwana) — nazwaSkladnika (bez kropki i nazwy unii)
+
+VII. Ograniczenia w przypadku unii anonimowej:
+— zwykle stosowana w jakimś zakresie lokalnym
+— jesli chcemy ją umieścić w zakresie globalnym, to musi mieć przydomek static (zakres ważności pliku)
+— jesli istnieje juz gdzies nazwa zmiennej która jest taka sama, to nazwa zmiennej unii nie może mieć takiej samej nazwy (w danym zakresie ważności nazwy)
+— nie można w niej deklarować składnika typu private (bo nie są sprawdzane prawa dostępu do składników)
+— nie może być w niej funkcji składowych (gdyż nie ma tam ani nazwy obiektu, ani nazwy unii)
+— unia która nie ma nazwy, ale ma jakiś obiekt albo jakiś wskaźnik mogący na nią pokazywać - nie jest już anonimowa
+
+VIII. Obiekt typu unii, która nie ma nazwy, można stworzyć podając jego nazwę za klamrą {} ale przed średnikiem kończącym ;
+
+IX. Sam brak nazwy unii nie wystarczy do tego, aby unia była anonimowa. (Patrz punkt VII)
+
+X. Można zdefiniować obiekty typu pola bitowego. Pola bitowe to składniki klasy (lub struktury).
+
+XI. Pole bitowe może być typu:
+a) signed int
+c) long int
+d) bool
+e) unsigned int
+f) enum
+g) signed short
+h) char
+(dowolnego całkowitego typu)
+
+XII. Który składnik definicji pola bitowego można opuścić?
+b) nazwę
+
+XIII. Jeśli jakieś pole bitowe ma rozmiar 0 bitów:
+— sprawi to, że następne zdefiniowane pole bitowe po tym polu zostanie umieszczone od razu w kolejnym słowie, zamiast w tym samym co poprzednie (nawet jeśli byłoby na nie miejsce)
+
+XIV. Rozmieszczenie pól bitowych w słowie zależne jest od implementacji: każdy kompilator inaczej implementuje standard języka C++ i inaczej może rozwiązywać różne rzeczy.
+- można wszystko upakować w jednym bajcie, ale nie trzeba
+- jedno pole bitowe może być rozłożone nawet na dwa bajty
+- mogą kolejno zajmować miejsca od najmniej znaczącego bitu lub od najbardziej znaczącego bitu w słowie
+- można otrzymać signed lub unsigned int jeśli się nie określi typu int 
+
+XV. Pole bitowe:
+a) może być typu bool 
+d) musi być składnikiem klasy/struktury
+
+XVI. Program pytający o datę urodzenia w jednym ciągu cyfr i wyświetlający na ekranie (w postaci dziesiątkowej) poszczególne fragmenty (program)
